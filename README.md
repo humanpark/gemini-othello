@@ -4,10 +4,7 @@
 
 このプラグインは、Googleの対話型AI「Gemini」をコマンドラインで操作できるツール「Gemini CLI」を使って開発されました。ショートコードを記事に埋め込むだけで、あなたのWordPressサイトにAI対戦型のオセロ盤を設置できます。
 
-![Gemini Othello Screenshot](https://placehold.jp/600x400.png?text=Othello+Game+Screenshot)
-*(ここに実際のスクリーンショット画像を挿入してください)*
 
----
 
 ## 主な機能
 
