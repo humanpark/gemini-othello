@@ -1,0 +1,97 @@
+/* --- 基本レイアウト --- */
+#gemini-othello-game {
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center; /* 中央揃え */
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* ゲーム全体の最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* --- オセロ盤 --- */
+#othello-board {
+    display: grid;
+    /* 画面幅の90%か、高さの90%か、500pxのうち、一番小さい値を使う */
+    width: min(90vw, 90vh, 500px);
+    height: min(90vw, 90vh, 500px);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 2px solid #333;
+}
+
+.cell {
+    /* 幅と高さはgridが自動計算するので不要 */
+    background-color: #008000;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* for disc positioning */
+}
+
+.disc {
+    width: 80%; /* セルのサイズに対する割合 */
+    height: 80%;
+    border-radius: 50%;
+}
+
+.black {
+    background-color: #000;
+}
+
+.white {
+    background-color: #fff;
+}
+
+.valid-move {
+    background-color: #00a000;
+    border: 2px dashed #fff;
+}
+
+/* --- ゲームコントロール --- */
+#game-controls-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#game-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#game-messages {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    min-height: 50px; /* メッセージエリアの高さを確保 */
+}
+
+#restart-game {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* --- スマートフォン向けの調整 (例: 画面幅が600px以下の場合) --- */
+@media (max-width: 600px) {
+    #gemini-othello-game {
+        gap: 15px;
+    }
+
+    #game-messages {
+        font-size: 1em;
+    }
+
+    #restart-game {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
